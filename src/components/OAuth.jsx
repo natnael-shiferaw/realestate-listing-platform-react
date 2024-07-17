@@ -26,8 +26,11 @@ export default function OAuth() {
           email: user.email,
           timestamp: serverTimestamp()
         })
+        toast.success("sign up successful!")
       }
-      toast.success("sign up successful!")
+      else{
+        toast.success("sign in successful!")
+      }
       navigate("/")
     } catch (error) {
       toast.error("could not authorize with Google")
