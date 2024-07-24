@@ -13,6 +13,8 @@ import CreateListing from "./pages/CreateListing"
 import EditListing from "./pages/EditListing";
 import Listing from "./pages/Listing";
 import Category from "./pages/Category";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
           </Route>
           <Route path="/category/:categoryName" element={<Category />} />
         </Routes>
+        <Footer />
       </Router>
       <ToastContainer
         position="bottom-center"

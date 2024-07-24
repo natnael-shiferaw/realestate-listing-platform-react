@@ -27,7 +27,7 @@ export default function Header(){
     <div className="bg-white shadow-sm border-b sticky top-0 z-40">
       <header className="flex justify-between items-center px-3 mx-w-6xl mx-auto">
         <div>
-          <img src="https://static.rdc.moveaws.com/rdc-ui/logos/logo-brand.svg" alt="logo" className='h-5 cursor-pointer' onClick={()=> navigate("/")} />
+          <img src="https://i.imgur.com/5p44rDg_d.jpg?maxwidth=520&shape=thumb&fidelity=high" alt="logo" className='h-20 w-20 cursor-pointer' onClick={()=> navigate("/")} />
         </div>
         <div>
           <ul className="flex space-x-10">
