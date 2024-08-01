@@ -6,23 +6,23 @@ import { MdEdit } from "react-icons/md";
 export default function ListingItem({ listing, id, onEdit, onDelete }) {
     return (
         <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
-          <Link className="contents" to={`/category/${listing.type}/${id}`}> {/* Link to listing details */}
+          <Link className="contents" to={`/category/${listing.type}/${id}`}>
             <img
               className="h-[170px] w-full object-cover hover:scale-105 transition-scale duration-200 ease-in"
               loading="lazy"
-              src={listing.imgUrls[0]} // Display the first image of the listing
+              src={listing.imgUrls[0]}
             />
             <Moment
               className="absolute top-2 left-2 bg-[#3377cc] text-white uppercase text-xs font-semibold rounded-md px-2 py-1 shadow-lg"
               fromNow
             >
-              {listing.timestamp?.toDate()} {/* Display timestamp of the listing */}
+              {listing.timestamp?.toDate()}
             </Moment>
             <div className="w-full p-[10px]">
               <div className="flex items-center space-x-1">
-                <MdLocationOn className="h-4 w-4 text-green-600" /> {/* Location icon */}
+                <MdLocationOn className="h-4 w-4 text-green-600" />
                 <p className="font-semibold text-sm mb-[2px] text-gray-600 truncate">
-                  {listing.address} {/* Display listing address */}
+                  {listing.address}
                 </p>
               </div>
               <p className="font-semibold m-0 text-xl truncate">{listing.name}</p>
@@ -31,11 +31,11 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
                 {listing.offer
                   ? listing.discountedPrice
                       .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",") // Format discounted price
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   : listing.regularPrice
                       .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} // Format regular price
-                {listing.type === "rent" && " / month"} {/* Display '/ month' if listing is for rent */}
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                {listing.type === "rent" && " / month"}
               </p>
               <div className="flex items-center mt-[10px] space-x-3">
                 <div className="flex items-center space-x-1">
@@ -56,13 +56,13 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
           {onDelete && (
         <FaTrash
           className="absolute bottom-2 right-2 h-[14px] cursor-pointer text-red-500"
-          onClick={() => onDelete(listing.id)} // Display delete icon if onDelete prop is passed
+          onClick={() => onDelete(listing.id)}
         />
       )}
       {onEdit && (
         <MdEdit
           className="absolute bottom-2 right-7 h-4 cursor-pointer "
-          onClick={() => onEdit(listing.id)} // Display edit icon if onEdit prop is passed
+          onClick={() => onEdit(listing.id)}
         />
       )}
         </li>
