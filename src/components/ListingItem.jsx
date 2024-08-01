@@ -58,7 +58,6 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
           className="absolute bottom-2 right-2 h-[14px] cursor-pointer text-red-500"
           onClick={() => onDelete(listing.id)} // Display delete icon if onDelete prop is passed
         />
-        />
       )}
       {onEdit && (
         <MdEdit
