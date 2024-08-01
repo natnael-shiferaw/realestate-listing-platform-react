@@ -3,21 +3,24 @@ import {useLocation, useNavigate} from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 export default function Header(){
-    const [pageState, setPageState] = useState("Sign in")
-    const location = useLocation()
+    const [pageState, setPageState] = useState("Sign in") // State to manage page text
+    const location = useLocation() // Hook to get current location
     const navigate = useNavigate()
-    const auth = getAuth()
+    const auth = getAuth() // Get the Firebase auth instance
 
+    // Effect to check authentication state
     useEffect(()=> {
       onAuthStateChanged(auth, (user)=> {
         if(user){
-          setPageState("Profile")
+          setPageState("Profile") // Set text to "Profile" if user is logged in
         }
         else {
-          setPageState("Sign in")
+          setPageState("Sign in") // Set text to "Sign in" if no user is logged in
         }
       })
-    },[auth])
+    },[auth]) // Dependency array, re-run effect when auth changes
+
+    // Function to match current route with the given route
     function routeMatch(route){
       if(route === location.pathname){
         return true
